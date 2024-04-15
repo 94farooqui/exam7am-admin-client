@@ -12,6 +12,7 @@ const Home = () => {
         <Sidebar />
         <div className="w-full 1fr">
           <Header />
+          <h2>Dashboard... Coming soon</h2>
           <Outlet />
         </div>
       </div>
