@@ -1,0 +1,617 @@
+{
+  "id": 1,
+  "title": "Study Questions",
+  "description":"Lorem Ipsum is simply dummy text ",
+  "image": "",
+  "questions": [
+    {
+      "q": "When approaching a stop sign, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Slow down, but only stop if there is oncoming traffic"
+        },
+        {
+          "key": "B",
+          "option": "Stop completely and check for traffic before proceeding"
+        },
+        {
+          "key": "C",
+          "option": "Speed up to clear the intersection quickly"
+        },
+        {
+          "key": "D",
+          "option": "Honk your horn to alert other drivers"
+        }
+      ]
+    },
+    {
+      "q": "What does a yellow traffic light indicate?",
+      "options": [
+        {
+          "key": "A",
+          "option": "Stop"
+        },
+        {
+          "key": "B",
+          "option": "Proceed with caution"
+        },
+        {
+          "key": "C",
+          "option": "Speed up to clear the intersection"
+        },
+        {
+          "key": "D",
+          "option": "Change lanes"
+        }
+      ]
+    },
+    {
+      "q": "The legal blood alcohol concentration (BAC) limit for driving in most states is:",
+      "options": [
+        {
+          "key": "A",
+          "option": "0.02%"
+        },
+        {
+          "key": "B",
+          "option": "0.08%"
+        },
+        {
+          "key": "C",
+          "option": "0.10%"
+        },
+        {
+          "key": "D",
+          "option": "0.15%"
+        }
+      ]
+    },
+    {
+      "q": "When making a right turn at a red light after a complete stop, you must:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Yield to pedestrians and vehicles with the right-of-way"
+        },
+        {
+          "key": "B",
+          "option": "Proceed without stopping further"
+        },
+        {
+          "key": "C",
+          "option": "Only turn if there are no cars in sight"
+        },
+        {
+          "key": "D",
+          "option": "Make the turn quickly to avoid holding up traffic"
+        }
+      ]
+    },
+    {
+      "q": "When merging onto a freeway, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Stop at the end of the ramp and wait for a gap in traffic"
+        },
+        {
+          "key": "B",
+          "option": "Match the speed of traffic and merge when safe"
+        },
+        {
+          "key": "C",
+          "option": "Come to a complete stop on the freeway before merging"
+        },
+        {
+          "key": "D",
+          "option": "Merge as quickly as possible regardless of other traffic"
+        }
+      ]
+    },
+    {
+      "q": "When driving in foggy conditions, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Turn on your high beams to see better"
+        },
+        {
+          "key": "B",
+          "option": "Drive with your hazard lights on"
+        },
+        {
+          "key": "C",
+          "option": "Use low beam headlights and reduce your speed"
+        },
+        {
+          "key": "D",
+          "option": "Speed up to get out of the fog quickly"
+        }
+      ]
+    },
+    {
+      "q": "What does a solid yellow line on the road indicate?",
+      "options": [
+        {
+          "key": "A",
+          "option": "Passing is allowed"
+        },
+        {
+          "key": "B",
+          "option": "Passing is not allowed"
+        },
+        {
+          "key": "C",
+          "option": "Passing is allowed only during daylight hours"
+        },
+        {
+          "key": "D",
+          "option": "Passing is allowed only if the car ahead is going too slow"
+        }
+      ]
+    },
+    {
+      "q": "When approaching a roundabout, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Always yield to vehicles already in the roundabout"
+        },
+        {
+          "key": "B",
+          "option": "Speed up to beat the traffic already in the roundabout"
+        },
+        {
+          "key": "C",
+          "option": "Sound your horn to alert other drivers of your presence"
+        },
+        {
+          "key": "D",
+          "option": "Proceed without yielding if there are no cars in the roundabout"
+        }
+      ]
+    },
+    {
+      "q": "When parallel parking, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Keep your wheels straight to prevent rolling"
+        },
+        {
+          "key": "B",
+          "option": "Park as close to the curb as possible"
+        },
+        {
+          "key": "C",
+          "option": "Park at least 18 inches from the curb"
+        },
+        {
+          "key": "D",
+          "option": "Park with your wheels turned towards the curb"
+        }
+      ]
+    },
+    {
+      "q": "When following another vehicle at night, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Keep your headlights on high beam"
+        },
+        {
+          "key": "B",
+          "option": "Maintain a safe following distance and use low beam headlights"
+        },
+        {
+          "key": "C",
+          "option": "Tailgate to maintain visibility"
+        },
+        {
+          "key": "D",
+          "option": "Use your horn intermittently to alert the driver ahead"
+        }
+      ]
+    },
+    {
+      "q": "If you're involved in a collision, you must:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Always admit fault to avoid legal complications"
+        },
+        {
+          "key": "B",
+          "option": "Exchange information with other involved parties and notify your insurance company"
+        },
+        {
+          "key": "C",
+          "option": "Leave the scene immediately if there are no injuries"
+        },
+        {
+          "key": "D",
+          "option": "Move the vehicles involved to avoid blocking traffic"
+        }
+      ]
+    },
+    {
+      "q": "When driving in heavy rain, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Turn on your hazard lights and drive faster to reach your destination quickly"
+        },
+        {
+          "key": "B",
+          "option": "Use low beam headlights and increase your following distance"
+        },
+        {
+          "key": "C",
+          "option": "Use cruise control to maintain a steady speed"
+        },
+        {
+          "key": "D",
+          "option": "Honk your horn to alert other drivers of your presence"
+        }
+      ]
+    },
+    {
+      "q": "When a school bus is stopped with its red lights flashing and its stop sign extended, you must:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Slow down and proceed with caution"
+        },
+        {
+          "key": "B",
+          "option": "Pass the bus if you're in a hurry"
+        },
+        {
+          "key": "C",
+          "option": "Stop until the lights stop flashing and the sign is retracted"
+        },
+        {
+          "key": "D",
+          "option": "Ignore the bus and continue driving"
+        }
+      ]
+    },
+    {
+      "q": "If you encounter a bicyclist on the road, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Honk your horn to alert them of your presence"
+        },
+        {
+          "key": "B",
+          "option": "Give them at least 3 feet of clearance when passing"
+        },
+        {
+          "key": "C",
+          "option": "Swerve around them as quickly as possible"
+        },
+        {
+          "key": "D",
+          "option": "Tailgate to encourage them to move over"
+        }
+      ]
+    },
+    {
+      "q": "What does a solid white line on the road indicate?",
+      "options": [
+        {
+          "key": "A",
+          "option": "Passing is allowed"
+        },
+        {
+          "key": "B",
+          "option": "Passing is not allowed"
+        },
+        {
+          "key": "C",
+          "option": "Passing is allowed only during daylight hours"
+        },
+        {
+          "key": "D",
+          "option": "Passing is allowed only if the car ahead is going too slow"
+        }
+      ]
+    },
+    {
+      "q": "When driving in heavy traffic, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Tailgate to maintain your position in the flow of traffic"
+        },
+        {
+          "key": "B",
+          "option": "Keep switching lanes to find the fastest route"
+        },
+        {
+          "key": "C",
+          "option": "Maintain a safe following distance and be patient"
+        },
+        {
+          "key": "D",
+          "option": "Use your horn frequently to alert other drivers"
+        }
+      ]
+    },
+    {
+      "q": "When approaching a railroad crossing with flashing lights and gates down, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Speed up to clear the tracks before the train arrives"
+        },
+        {
+          "key": "B",
+          "option": "Stop and wait until the lights stop flashing and the gates are raised"
+        },
+        {
+          "key": "C",
+          "option": "Drive around the gates if you don't see a train coming"
+        },
+        {
+          "key": "D",
+          "option": "Drive over the tracks quickly to avoid being stuck behind the gates"
+        }
+      ]
+    },
+    {
+      "q": "What does a green arrow signal indicate?",
+      "options": [
+        {
+          "key": "A",
+          "option": "Stop"
+        },
+        {
+          "key": "B",
+          "option": "Proceed with caution"
+        },
+        {
+          "key": "C",
+          "option": "Proceed only in the direction of the arrow"
+        },
+        {
+          "key": "D",
+          "option": "Change lanes"
+        }
+      ]
+    },
+    {
+      "q": "When parking uphill with a curb, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Turn your wheels away from the curb"
+        },
+        {
+          "key": "B",
+          "option": "Turn your wheels towards the curb"
+        },
+        {
+          "key": "C",
+          "option": "Keep your wheels straight"
+        },
+        {
+          "key": "D",
+          "option": "Park at least 18 inches away from the curb"
+        }
+      ]
+    },
+    {
+      "q": "When driving in a roundabout, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Use the left lane to exit if possible"
+        },
+        {
+          "key": "B",
+          "option": "Use the right lane to exit if possible"
+        },
+        {
+          "key": "C",
+          "option": "Drive in the opposite direction of traffic to exit quickly"
+        },
+        {
+          "key": "D",
+          "option": "Stop in the middle of the roundabout if you're unsure of which exit to take"
+        }
+      ]
+    },
+    {
+      "q": "If you miss your exit on a freeway, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Stop and reverse back to the exit"
+        },
+        {
+          "key": "B",
+          "option": "Continue driving until you reach the next exit"
+        },
+        {
+          "key": "C",
+          "option": "Make a U-turn across the median"
+        },
+        {
+          "key": "D",
+          "option": "Drive in reverse on the shoulder until you reach the exit"
+        }
+      ]
+    },
+    {
+      "q": "When approaching a pedestrian crossing, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Speed up to get through before the pedestrians"
+        },
+        {
+          "key": "B",
+          "option": "Slow down and be prepared to stop"
+        },
+        {
+          "key": "C",
+          "option": "Honk your horn to alert pedestrians of your presence"
+        },
+        {
+          "key": "D",
+          "option": "Ignore the pedestrian crossing and continue driving"
+        }
+      ]
+    },
+    {
+      "q": "If your vehicle starts to hydroplane, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Steer straight and gradually reduce speed"
+        },
+        {
+          "key": "B",
+          "option": "Slam on the brakes to regain control"
+        },
+        {
+          "key": "C",
+          "option": "Accelerate to gain traction"
+        },
+        {
+          "key": "D",
+          "option": "Swerve from side to side to break the water surface tension"
+        }
+      ]
+    },
+    {
+      "q": "When driving on a highway, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Drive at a speed that feels comfortable to you"
+        },
+        {
+          "key": "B",
+          "option": "Use the left lane for slower-moving vehicles"
+        },
+        {
+          "key": "C",
+          "option": "Use the right lane for passing and the left lane for cruising"
+        },
+        {
+          "key": "D",
+          "option": "Follow the flow of traffic, regardless of speed limits"
+        }
+      ]
+    },
+    {
+      "q": "What does a flashing yellow traffic light indicate?",
+      "options": [
+        {
+          "key": "A",
+          "option": "Stop"
+        },
+        {
+          "key": "B",
+          "option": "Proceed with caution"
+        },
+        {
+          "key": "C",
+          "option": "Speed up to clear the intersection"
+        },
+        {
+          "key": "D",
+          "option": "Change lanes"
+        }
+      ]
+    },
+    {
+      "q": "When making a left turn at a green light, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Yield to oncoming traffic and pedestrians"
+        },
+        {
+          "key": "B",
+          "option": "Proceed without yielding"
+        },
+        {
+          "key": "C",
+          "option": "Sound your horn to alert other drivers"
+        },
+        {
+          "key": "D",
+          "option": "Ignore oncoming traffic and turn quickly"
+        }
+      ]
+    },
+    {
+      "q": "When driving in snowy conditions, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Use snow tires or chains and reduce your speed"
+        },
+        {
+          "key": "B",
+          "option": "Increase your speed to reach your destination quicker"
+        },
+        {
+          "key": "C",
+          "option": "Use your horn to alert other drivers"
+        },
+        {
+          "key": "D",
+          "option": "Keep your high beam headlights on for better visibility"
+        }
+      ]
+    },
+    {
+      "q": "What should you do if you're being tailgated?",
+      "options": [
+        {
+          "key": "A",
+          "option": "Slam on your brakes to teach the tailgater a lesson"
+        },
+        {
+          "key": "B",
+          "option": "Speed up to get away from the tailgater"
+        },
+        {
+          "key": "C",
+          "option": "Increase your following distance and let the tailgater pass"
+        },
+        {
+          "key": "D",
+          "option": "Ignore the tailgater and maintain your speed"
+        }
+      ]
+    },
+    {
+      "q": "When driving behind a motorcycle, you should:",
+      "options": [
+        {
+          "key": "A",
+          "option": "Maintain a safe following distance"
+        },
+        {
+          "key": "B",
+          "option": "Tailgate to encourage the motorcyclist to speed up"
+        },
+        {
+          "key": "C",
+          "option": "Drive as close to the motorcycle as possible"
+        },
+        {
+          "key": "D",
+          "option": "Overtake the motorcycle as soon as possible"
+        }
+      ]
+    }
+  ]
+}
