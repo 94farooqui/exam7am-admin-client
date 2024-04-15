@@ -1,10 +1,11 @@
 import axios from "axios";
-const serverURL = "https://exam7am-admin-2.onrender.com/";
+const serverURL = import.meta.env.VITE_SERVER_URL
 
 export const getAllAssessment = async () => {
   const response = await axios.get(`${serverURL}/api/assessments`);
 
   if (response.status === 200) {
+    console.log("Requesting all assessments")
     //console.log(response.data)
     return response.data;
   }
