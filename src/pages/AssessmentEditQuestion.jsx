@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { createNewQuestion, getQuestionDetails } from "../apiHelper/assessment.helper";
 import { useQuery } from "@tanstack/react-query";
@@ -12,9 +12,10 @@ const initialValues = {
 
 const AssessmentEditQuestion = () => {
   const params = useParams();
+  const [formData,setFormData] = useState(initialValues)
 
   const {
-    data: question,
+    data: questionData,
     isLoading,
     error,
   } = useQuery({
@@ -24,21 +25,32 @@ const AssessmentEditQuestion = () => {
     },
   });
 
-  console.log(question)
+  useEffect(()=>{
+    console.log("Received",questionData)
+    if(questionData){
+      setFormData({
+        question: questionData.question,
+        options: [...questionData.options],
+        image : questionData.image,
+        correctAnswer : questionData.correctAnswer
+      })
+    }
+  },[questionData])
+
+  if(questionData) console.log(questionData)
 
   
   const formRef = useRef(null)
-  const { id } = params;
   const navigate = useNavigate()
-  const [newQuestion, setNewQuestion] = useState(initialValues);
+  //const [newQuestion, setNewQuestion] = useState(question);
   const [uploadPercentage, setUploadPercentage] = useState(0);
   const [file, setFile] = useState(null);
 
-  const [option1, setOption1] = useState("");
-  const [option2, setOption2] = useState("");
+  const [option1, setOption1] = useState();
+  const [option2, setOption2] = useState();
 
-  const [option3, setOption3] = useState("");
-  const [option4, setOption4] = useState("");
+  const [option3, setOption3] = useState();
+  const [option4, setOption4] = useState();
 
   const onInputChange = (e) => {
     setNewQuestion({ ...newQuestion, [e.target.name]: e.target.value });
@@ -99,7 +111,7 @@ const AssessmentEditQuestion = () => {
       obj["value"] = optinosValueArray[i];
       setNewQuestion({...newQuestion, options:newQuestion.options.push(obj) })
     }
-    const questionAdded = createNewQuestion({ id: id, question: newQuestion });  //sending data to helper function
+    const questionAdded = updateQuestion({ assessmentId: params.id, question: newQuestion, questionId: params.qid });  //sending data to helper function
     if(questionAdded){
       setNewQuestion(initialValues)
       formRef.current.reset()
@@ -126,7 +138,7 @@ const AssessmentEditQuestion = () => {
             </label>
             <textarea
               name="question"
-              defaultValue={question.question}
+              defaultValue={formData.question}
               onChange={(e) => onInputChange(e)}
               className="p-2 resize-none border border-slate-300 rounded-md"
               rows={3}
@@ -134,7 +146,7 @@ const AssessmentEditQuestion = () => {
             />
           </div>
 
-          {question.image && <img src={question.image} />}
+          {formData.image && <img src={formData.image} />}
 
           <div className="flex flex-col gap-1">
             <label>Image</label>
@@ -161,7 +173,7 @@ const AssessmentEditQuestion = () => {
             <input
               type="text"
               name="one"
-              defaultValue={question.options[0].value}
+              defaultValue={formData.options[0].value}
               onChange={(e) => setOption1(e.target.value)}
               className="flex-1 border border-slate-200 p-2 rounded-md"
               placeholder="Enter option text"
@@ -172,7 +184,7 @@ const AssessmentEditQuestion = () => {
             <input
               type="text"
               name="two"
-              defaultValue={question.options[1].value}
+              defaultValue={formData.options[1].value}
               onChange={(e) => setOption2(e.target.value)}
               className="flex-1 border border-slate-200 p-2 rounded-md"
               placeholder="Enter option text"
@@ -183,7 +195,7 @@ const AssessmentEditQuestion = () => {
             <input
               type="text"
               name="three"
-              defaultValue={question.options[2].value}
+              defaultValue={formData.options[2].value}
               onChange={(e) => setOption3(e.target.value)}
               className="flex-1 border border-slate-200 p-2 rounded-md"
               placeholder="Enter option text"
@@ -194,7 +206,7 @@ const AssessmentEditQuestion = () => {
             <input
               type="text"
               name="four"
-              defaultValue={question.options[3].value}
+              defaultValue={formData.options[3].value}
               onChange={(e) => setOption4(e.target.value)}
               className="flex-1 border border-slate-200 p-2 rounded-md"
               placeholder="Enter option text"
@@ -205,7 +217,7 @@ const AssessmentEditQuestion = () => {
             <select
               name="correctAnswer"
               onChange={(e) => onInputChange(e)}
-              defaultValue={question.correctAnswer}
+              defaultValue={formData.correctAnswer}
               className="border border-slate-200 p-2 rounded-md "
             >
               <option value="">Select</option>
