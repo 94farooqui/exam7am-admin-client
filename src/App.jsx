@@ -16,7 +16,8 @@ import {
   QueryClientProvider,
   useQuery,
 } from '@tanstack/react-query'
-import AssessmentNewQuestion from "./pages/AssessmentNewQuestion";
+import AssessmentNewQuestion from "./pages/AssessmentEditQuestion";
+import AssessmentEditQuestion from "./pages/AssessmentEditQuestion";
 
 const queryClient = new QueryClient()
 
@@ -33,9 +34,14 @@ const App = () => {
               element={<AssessmentDetails />}
             />
             <Route
+              path="/assessment/:id/edit/:qid"
+              element={<AssessmentEditQuestion />}
+            />
+            <Route
               path="/assessment/:id/newQuestion"
               element={<AssessmentNewQuestion />}
             />
+            
             <Route path="/assessment/new" element={<NewAssessmentCategory />} />
             <Route path="/driving" element={<DrivingHomePage />} />
             <Route path="/driving/:country" element={<DrivingCountry />} />

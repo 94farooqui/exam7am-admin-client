@@ -47,3 +47,13 @@ export const createNewQuestion = async ({ id, question }) => {
     return true;
   } else return false;
 };
+
+
+export const getQuestionDetails = async (assessmentId, questionId) => {
+  const response = await axios.get(`${serverURL}/api/assessments/${assessmentId}/question/${questionId}`)
+  console.log(response)
+  if(!response.status == 200){
+    return error
+  }
+  return response.data
+}
