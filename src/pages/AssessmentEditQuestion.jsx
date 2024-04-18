@@ -1,17 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { createNewQuestion, getQuestionDetails } from "../apiHelper/assessment.helper";
+import { createNewQuestion, getQuestionDetails, updateQuestion } from "../apiHelper/assessment.helper";
 import { useQuery } from "@tanstack/react-query";
 
 const initialValues = {
-  question: "",
+  question: null,
   options: [],
-  image: "",
-  correctAnswer: "",
+  image: null,
+  correctAnswer: null,
 };
 
 const AssessmentEditQuestion = () => {
   const params = useParams();
+  const assessmentId = params.id
+  const questionId = params.qid
+
   const [formData,setFormData] = useState(initialValues)
 
   const {
@@ -21,25 +24,28 @@ const AssessmentEditQuestion = () => {
   } = useQuery({
     queryKey: ["question", params.qid],
     queryFn: () => {
-      return getQuestionDetails(params.id, params.qid);
+      return getQuestionDetails(assessmentId, questionId);
     },
   });
 
   useEffect(()=>{
-    console.log("Received",questionData)
+    
     if(questionData){
+      console.log("Received",questionData)
       setFormData({
         question: questionData.question,
         options: [...questionData.options],
         image : questionData.image,
         correctAnswer : questionData.correctAnswer
       })
+      setOption1(questionData.options[0].value)
+      setOption2(questionData.options[1].value)
+      setOption3(questionData.options[2].value)
+      setOption4(questionData.options[3].value)
+
     }
   },[questionData])
 
-  if(questionData) console.log(questionData)
-
-  
   const formRef = useRef(null)
   const navigate = useNavigate()
   //const [newQuestion, setNewQuestion] = useState(question);
@@ -53,7 +59,7 @@ const AssessmentEditQuestion = () => {
   const [option4, setOption4] = useState();
 
   const onInputChange = (e) => {
-    setNewQuestion({ ...newQuestion, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const onOptionChnge = (e) => {
@@ -101,19 +107,21 @@ const AssessmentEditQuestion = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(newQuestion);
+    console.log(formData);
     const optinosValueArray = [option1, option2,option3,option4]
     const optionsKeyArray = ["one", "two" , "three" , "four"]
+    setFormData({...formData, options : []})
     for(let i=0; i<optinosValueArray.length; i++){
       // newQuestion.options.push({(i+1) = optinosValueArray[i]})
       let obj = {}
       obj["key"] = optionsKeyArray[i]
       obj["value"] = optinosValueArray[i];
-      setNewQuestion({...newQuestion, options:newQuestion.options.push(obj) })
+      setFormData({...formData, options : formData.options.push(obj)})
+      // setNewQuestion({...newQuestion, options:newQuestion.options.push(obj) })
     }
-    const questionAdded = updateQuestion({ assessmentId: params.id, question: newQuestion, questionId: params.qid });  //sending data to helper function
+    const questionAdded = updateQuestion({ assessmentId: assessmentId, question: formData, questionId: questionId });  //sending data to helper function
     if(questionAdded){
-      setNewQuestion(initialValues)
+      setFormData(initialValues)
       formRef.current.reset()
       navigate(-1)
     }
@@ -138,7 +146,7 @@ const AssessmentEditQuestion = () => {
             </label>
             <textarea
               name="question"
-              defaultValue={formData.question}
+              defaultValue={questionData.question}
               onChange={(e) => onInputChange(e)}
               className="p-2 resize-none border border-slate-300 rounded-md"
               rows={3}
@@ -173,7 +181,7 @@ const AssessmentEditQuestion = () => {
             <input
               type="text"
               name="one"
-              defaultValue={formData.options[0].value}
+              defaultValue={questionData.options[0].value}
               onChange={(e) => setOption1(e.target.value)}
               className="flex-1 border border-slate-200 p-2 rounded-md"
               placeholder="Enter option text"
@@ -184,7 +192,7 @@ const AssessmentEditQuestion = () => {
             <input
               type="text"
               name="two"
-              defaultValue={formData.options[1].value}
+              defaultValue={questionData.options[1].value}
               onChange={(e) => setOption2(e.target.value)}
               className="flex-1 border border-slate-200 p-2 rounded-md"
               placeholder="Enter option text"
@@ -195,7 +203,7 @@ const AssessmentEditQuestion = () => {
             <input
               type="text"
               name="three"
-              defaultValue={formData.options[2].value}
+              defaultValue={questionData.options[2].value}
               onChange={(e) => setOption3(e.target.value)}
               className="flex-1 border border-slate-200 p-2 rounded-md"
               placeholder="Enter option text"
@@ -206,7 +214,7 @@ const AssessmentEditQuestion = () => {
             <input
               type="text"
               name="four"
-              defaultValue={formData.options[3].value}
+              defaultValue={questionData.options[3].value}
               onChange={(e) => setOption4(e.target.value)}
               className="flex-1 border border-slate-200 p-2 rounded-md"
               placeholder="Enter option text"
@@ -217,7 +225,7 @@ const AssessmentEditQuestion = () => {
             <select
               name="correctAnswer"
               onChange={(e) => onInputChange(e)}
-              defaultValue={formData.correctAnswer}
+              defaultValue={questionData.correctAnswer}
               className="border border-slate-200 p-2 rounded-md "
             >
               <option value="">Select</option>
@@ -246,6 +254,7 @@ const AssessmentEditQuestion = () => {
       </div>
     </div>
   );
+  // return <h1>{formData.question}</h1>
 };
 
 export default AssessmentEditQuestion;

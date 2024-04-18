@@ -52,14 +52,18 @@ export const createNewQuestion = async ({ id, question }) => {
 export const getQuestionDetails = async (assessmentId, questionId) => {
   const response = await axios.get(`${serverURL}/api/assessments/${assessmentId}/question/${questionId}`)
   //console.log(assessmentId, questionId)
-  console.log(response.data)
-  if(!response.status == 200){
-    return error
+  if(response){
+    if(!response.status == 200){
+      return error
+    }
+    else {
+      //console.log(response.data)
+      return response.data}
   }
-  else return response.data
+ 
 }
 
 export const updateQuestion = async ( {assessmentId,question,questionId} ) =>  {
-  const response = await axios.put(`${serverURL}/api/assessments/${assessmentId}/question/${questionId}`)
+  const response = await axios.put(`${serverURL}/api/assessments/${assessmentId}/question/${questionId}`, question)
 
 }

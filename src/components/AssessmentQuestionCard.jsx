@@ -11,11 +11,12 @@ const AssessmentQuestionCard = ({ question, index }) => {
         {index + 1}) {question.question}
       </h3>
       <div className="flex flex-col gap-2 text-slate-500">
-        {question.options.map((option) => (
-          <p className="flex gap-2">
+        {question.options.map((option,index) => (
+          <p key={index} className="flex gap-2">
             <input
               type="checkbox"
               checked={question.correctAnswer == option.key}
+              onChange={()=>{}}
             />
             {option.value}
           </p>

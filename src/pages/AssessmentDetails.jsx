@@ -32,7 +32,7 @@ const AssessmentDetails = () => {
           <h2 className="text-xl font-semibold text-sky-700">Questions</h2>
           <Link to='newQuestion' className="bg-slate-600 rounded-md p-2 text-sm text-white" >Add Question</Link>
         </div>
-        {assessment.questions.map((question,index) => <AssessmentQuestionCard question={question} index={index} />)}
+        {assessment.questions.map((question,index) => <AssessmentQuestionCard question={question} key={index} />)}
       </div>
     </div>
   );
