@@ -34,7 +34,8 @@ const AssessmentEditQuestion = () => {
       console.log("Received",questionData)
       setFormData({
         question: questionData.question,
-        options: [...questionData.options],
+        //options: [...questionData.options],
+        options: [],
         image : questionData.image,
         correctAnswer : questionData.correctAnswer
       })
@@ -110,7 +111,7 @@ const AssessmentEditQuestion = () => {
     console.log(formData);
     const optinosValueArray = [option1, option2,option3,option4]
     const optionsKeyArray = ["one", "two" , "three" , "four"]
-    setFormData({...formData, options : []})
+    //setFormData({...formData, options : []})
     for(let i=0; i<optinosValueArray.length; i++){
       // newQuestion.options.push({(i+1) = optinosValueArray[i]})
       let obj = {}

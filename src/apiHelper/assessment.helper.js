@@ -67,3 +67,11 @@ export const updateQuestion = async ( {assessmentId,question,questionId} ) =>  {
   const response = await axios.put(`${serverURL}/api/assessments/${assessmentId}/question/${questionId}`, question)
 
 }
+
+export const deleteQuestion = async (assessmentId,questionId) => {
+  console.log(assessmentId,questionId)
+  const response = await axios.delete(`${serverURL}/api/assessments/${assessmentId}/question/${questionId}`)
+  if(response.status == 200){
+    return true
+  }
+}

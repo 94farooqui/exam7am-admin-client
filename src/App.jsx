@@ -23,7 +23,7 @@ const queryClient = new QueryClient()
 
 const App = () => {
   return (
-    <QueryClientProvider  client={queryClient}>
+    <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}>
