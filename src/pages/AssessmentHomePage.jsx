@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import trafficSigns from "./../data/assessment/traffics-signs.json";
-import safetySigns from "./../data/assessment/safety-signs.json";
-import studyQuestions from "./../data/assessment/study-questions.json";
+import trafficSigns from "../data/assessment/traffics-signs.json";
+import safetySigns from "../data/assessment/safety-signs.json";
+import studyQuestions from "../data/assessment/study-questions.json";
 import AssessmentCategoryCard from "../components/Cards/AssessmentCategoryCard";
 import NewAssessmentCategoryCard from "../components/Cards/NewAssessmentCategoryCard";
 import { Outlet } from "react-router-dom";
@@ -11,7 +11,7 @@ import ErrorPage from "../components/ErrorPage";
 import axios from "axios";
 import { getAllAssessment } from "../apiHelper/assessment.helper";
 
-const AssessmentListPage = () => {
+const AssessmentHomePage = () => {
   const {
     data: allAssessments,
     isLoading,
@@ -42,4 +42,4 @@ const AssessmentListPage = () => {
   );
 };
 
-export default AssessmentListPage;
+export default AssessmentHomePage;

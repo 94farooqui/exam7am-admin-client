@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getAssessmentDetails } from "../apiHelper/assessment.helper";
 import ErrorPage from "../components/ErrorPage";
@@ -25,6 +25,9 @@ const AssessmentDetails = () => {
 
   if (error) return <ErrorPage />;
 
+  useEffect(()=>{
+    refetch()
+  },[])
   return (
     <div className="max-w-[1200px] mx-auto font-poppins">
       <div className="flex flex-col gap-8 py-8">
@@ -33,7 +36,7 @@ const AssessmentDetails = () => {
           <h2 className="text-xl font-semibold text-sky-700">Questions</h2>
           <Link to='newQuestion' className="bg-slate-600 rounded-md p-2 text-sm text-white" >Add Question</Link>
         </div>
-        {assessment.questions.map((question,index) => <AssessmentQuestionCard refetch={refetch} assessmentId={params.id} question={question} key={index} />)}
+        {assessment.questions.map((question,index) => <AssessmentQuestionCard refetch={refetch} assessmentId={params.id} question={question} key={index} index={index} />)}
       </div>
     </div>
   );

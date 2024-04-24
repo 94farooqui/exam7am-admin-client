@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AssessmentListPage from "./pages/AssessmentListPage";
+import AssessmentHomePage from "./pages/AssessmentHomePage";
 import DrivingHomePage from "./pages/DrivingHomePage";
 import Home from "./pages/Home";
 import QuizListPage from "./pages/QuizListPage";
@@ -16,7 +16,7 @@ import {
   QueryClientProvider,
   useQuery,
 } from '@tanstack/react-query'
-import AssessmentNewQuestion from "./pages/AssessmentEditQuestion";
+import AssessmentNewQuestion from "./pages/AssessmentNewQuestion";
 import AssessmentEditQuestion from "./pages/AssessmentEditQuestion";
 
 const queryClient = new QueryClient()
@@ -28,7 +28,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />}>
             <Route path="/quiz" element={<QuizListPage />} />
-            <Route path="/assessment" element={<AssessmentListPage />}></Route>
+            <Route path="/assessment" element={<AssessmentHomePage />}></Route>
             <Route
               path="/assessment/:id"
               element={<AssessmentDetails />}
