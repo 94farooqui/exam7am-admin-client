@@ -8,6 +8,9 @@ import AssessmentQuestionCard from "../components/AssessmentQuestionCard";
 
 const AssessmentDetails = () => {
   const params = useParams();
+  useEffect(()=>{
+    refetch()
+  },[])
 
   const {
     data: assessment,
@@ -25,9 +28,7 @@ const AssessmentDetails = () => {
 
   if (error) return <ErrorPage />;
 
-  useEffect(()=>{
-    refetch()
-  },[])
+  
   return (
     <div className="max-w-[1200px] mx-auto font-poppins">
       <div className="flex flex-col gap-8 py-8">

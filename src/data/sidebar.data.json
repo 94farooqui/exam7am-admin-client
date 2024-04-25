@@ -1,0 +1,74 @@
+{
+    "modules":[
+        {
+            "name":"Home",
+            "url":"/",
+            "icon":""
+        },
+        {
+            "name":"Accounting",
+            "url":"/accounting",
+            "icon":""
+        },
+        {
+            "name":"General Aptitude",
+            "url":"/general-aptitude",
+            "icon":""
+        },
+        {
+            "name":"General Knowledge",
+            "url":"/general-knowledge",
+            "icon":""
+        },
+        {
+            "name":"Mathematical",
+            "url":"/mathematical",
+            "icon":""
+        },
+        {
+            "name":"Current Affairs",
+            "url":"/current-affairs",
+            "icon":""
+        },
+        {
+            "name":"Coading Challenges",
+            "url":"/coading",
+            "icon":""
+        },
+        {
+            "name":"IT & Software",
+            "url":"/it-software",
+            "icon":""
+        },
+        {
+            "name":"HR & Admin",
+            "url":"/hr-admin",
+            "icon":""
+        },
+        {
+            "name":"Finance",
+            "url":"/finance",
+            "icon":""
+        },
+        {
+            "name":"Marketing",
+            "url":"/marketing",
+            "icon":""
+        },
+        {
+            "name":"Science",
+            "url":"/science",
+            "icon":""
+        },
+        {
+            "name":"Political",
+            "url":"/political",
+            "icon":""
+        },
+        {
+            "name":"History",
+            "url":"/history",
+            "icon":""
+        }
+    ]
+}

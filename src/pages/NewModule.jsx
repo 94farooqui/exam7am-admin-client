@@ -8,27 +8,30 @@ import {
 import { app } from "../firebase";
 import { createNewAssessment } from "../apiHelper/assessment.helper";
 import { useNavigate } from "react-router-dom";
+import { createNewModule } from "../apiHelper/modules.helper";
 
-const defaultNewCategory = {
+const defaultNewModule = {
+  name: null,
   title: null,
   description: null,
-  image: null,
+  imageUrl: null,
+  assessments:[]
 };
 
-const NewAssessmentCategory = () => {
-  const [newCategory, setNewCategory] = useState(defaultNewCategory);
+const NewModule = () => {
+  const [newModule, setNewModule] = useState(defaultNewModule);
   const formRef = useRef()
   const navigate = useNavigate()
 
-
-  
-  
   const [newError, setNewError] = useState(null);
   const [uploadPercentage, setUploadPercentage] = useState(0);
   const [file,setFile] = useState(null)
 
   const onInputChange = (e) => {
-    setNewCategory({ ...newCategory, [e.target.name]: e.target.value });
+    setNewModule({ ...newModule, [e.target.name]: e.target.value });
+    if(e.target.name == "title"){
+      setNewModule({...newModule,[e.target.name]: e.target.value, name: (e.target.value.replace(/ /g,"-")).toLowerCase() })
+    }
   };
 
   const onFileChange = (e) => {
@@ -41,7 +44,7 @@ const NewAssessmentCategory = () => {
     console.log("File upload started");
     const storage = getStorage(app);
     const fileName = new Date().getTime() + selected.name;
-    const storageRef = ref(storage, `Assessments/images/${fileName}`);
+    const storageRef = ref(storage, `Modules/images/${fileName}`);
 
     const uploadTask = uploadBytesResumable(storageRef, file);
 
@@ -57,7 +60,7 @@ const NewAssessmentCategory = () => {
 
     () => {
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) =>
-        setNewCategory({ ...newCategory, image: downloadURL })
+      setNewModule({ ...newModule, imageUrl: downloadURL })
       );
     },
     );
@@ -65,10 +68,10 @@ const NewAssessmentCategory = () => {
 
   const onFormSubmit = async (event) => {
     event.preventDefault();
-    const result = await createNewAssessment(newCategory)
+    const result = await createNewModule(newModule)
     if(result){
         formRef.current.reset()
-        navigate('/assessment')
+        navigate('/')
     }
     else setNewError("Something went wrong")
     // console.log(newCategory)
@@ -77,7 +80,7 @@ const NewAssessmentCategory = () => {
     <div className="max-w-[1200px] mx-auto font-poppins py-12">
       <div className="w-full bg-white shadow-md p-12">
         <h2 className="text-slate-500 text-2xl font-bold mb-6">
-          Add Assessment Category
+          Add New Module
         </h2>
         <form onSubmit={(e)=>onFormSubmit(e)} className="flex flex-col gap-4" ref={formRef}>
           <div className="flex flex-col gap-1">
@@ -134,4 +137,4 @@ const NewAssessmentCategory = () => {
   );
 };
 
-export default NewAssessmentCategory;
+export default NewModule;

@@ -15,24 +15,26 @@ import {
   QueryClient,
   QueryClientProvider,
   useQuery,
-} from '@tanstack/react-query'
+} from "@tanstack/react-query";
 import AssessmentNewQuestion from "./pages/AssessmentNewQuestion";
 import AssessmentEditQuestion from "./pages/AssessmentEditQuestion";
+import ModulePage from "./pages/ModulePage";
+import NewModule from "./pages/NewModule";
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}>
+          <Route exact path="/" element={<Home />}>
+            <Route path="/module/new" element={<NewModule />} />
+            <Route path="/:module" element={<ModulePage />} />
+            <Route path="/:module/new" element={<NewAssessmentCategory />} />
             <Route path="/quiz" element={<QuizListPage />} />
             <Route path="/assessment" element={<AssessmentHomePage />}></Route>
-            <Route
-              path="/assessment/:id"
-              element={<AssessmentDetails />}
-            />
+            <Route path="/assessment/:id" element={<AssessmentDetails />} />
             <Route
               path="/assessment/:id/edit/:qid"
               element={<AssessmentEditQuestion />}
@@ -41,7 +43,7 @@ const App = () => {
               path="/assessment/:id/newQuestion"
               element={<AssessmentNewQuestion />}
             />
-            
+
             <Route path="/assessment/new" element={<NewAssessmentCategory />} />
             <Route path="/driving" element={<DrivingHomePage />} />
             <Route path="/driving/:country" element={<DrivingCountry />} />
