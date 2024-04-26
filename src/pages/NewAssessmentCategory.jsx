@@ -10,6 +10,7 @@ import { createNewAssessment } from "../apiHelper/assessment.helper";
 import { useNavigate, useParams } from "react-router-dom";
 
 const defaultNewCategory = {
+  name:null,
   title: null,
   description: null,
   image: null,
@@ -32,6 +33,9 @@ const NewAssessmentCategory = () => {
 
   const onInputChange = (e) => {
     setNewCategory({ ...newCategory, [e.target.name]: e.target.value });
+    if(e.target.name == "title"){
+      setNewCategory({...newCategory,[e.target.name]: e.target.value, name: (e.target.value.replace(/ /g,"-")).toLowerCase() })
+    }
   };
 
   const onFileChange = (e) => {

@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.active{
+    @apply bg-blue-800 rounded-lg hover:bg-blue-800
+}
+
 body{
     background-color: aliceblue;
 }

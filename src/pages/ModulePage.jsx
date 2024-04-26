@@ -24,8 +24,8 @@ const ModulePage = () => {
           <Link to='new' className="p-2 border rounded-lg text-lg">Add New</Link>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-4 p-8">
-      {!receivedData.categories.length >0 ? <p>No Data Found</p> :receivedData.categories.map(category => <AssessmentCategoryCard category={category}/>)}
+      <div className="grid grid-cols-4 gap-6 p-8">
+      {!receivedData.categories.length >0 ? <p>No Data Found</p> :receivedData.categories.map(category => <AssessmentCategoryCard key={category._id} category={category}/>)}
       </div>
     </div>
   );

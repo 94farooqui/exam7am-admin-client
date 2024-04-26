@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Logo from "./../../assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import { RxDashboard } from "react-icons/rx";
 import { TbDeviceDesktopQuestion } from "react-icons/tb";
@@ -28,13 +28,19 @@ const Sidebar = () => {
         </div>
         <h2 className="px-4 py-2 text-slate-400 text-[14px]">MENU</h2>
         <div className=" flex flex-col gap-2 text-[16px] ">
+        <NavLink className="w-full py-2 px-4 hover:bg-[#333A48] rounded-lg" to="/">
+              <div className="flex items-center gap-2">
+                <RxDashboard className="text-[18px]" />
+                <p>Home</p>
+              </div>
+            </NavLink>
           {modules.map((module) => (
-            <Link key={module._id} className="w-full py-2 px-4 hover:bg-[#333A48]" to={`/${module.name}`}>
+            <NavLink key={module._id} className="w-full py-2 px-4 hover:bg-[#333A48] rounded-lg" to={`/${module.name}`}>
               <div className="flex items-center gap-2">
                 <RxDashboard className="text-[18px]" />
                 <p>{module.title}</p>
               </div>
-            </Link>
+            </NavLink>
           ))}
           <Link to='/module/new'>Add New</Link>
         </div>
