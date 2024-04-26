@@ -28,10 +28,9 @@ export const getAssessmentDetails = async (id) => {
   return response;
 };
 
-export const createNewAssessment = async (assessment) => {
+export const createNewAssessment = async (moduleName,assessment) => {
   console.log(assessment);
-  const response = await axios.post(`${serverURL}/api/admin/assessments`, assessment);
-
+  const response = await axios.post(`${serverURL}/modules/${moduleName}/categories`, assessment)
   if (response.status === 200) {
     return true;
   } else return false;

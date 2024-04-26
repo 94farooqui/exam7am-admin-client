@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getAllCategoriesOfModule } from "../apiHelper/modules.helper";
 import ErrorPage from "../components/ErrorPage";
+import AssessmentCategoryCard from "../components/Cards/AssessmentCategoryCard";
 
 const ModulePage = () => {
   const params = useParams();
@@ -20,10 +21,12 @@ const ModulePage = () => {
       <div>
         <div className="w-full flex items-center justify-between bg-white p-4 border-t-2 border-slate-100 shadow-sm">
           <h1 className="text-3xl font-bold text-slate-600">{receivedData.title}</h1>
-          <button className="p-2 border rounded-lg text-lg">Add New</button>
+          <Link to='new' className="p-2 border rounded-lg text-lg">Add New</Link>
         </div>
       </div>
-      {!receivedData.categories.length >0 ? <p>No Data Found</p> :receivedData.categories.map(category => <h1>{category.title}</h1>)}
+      <div className="grid grid-cols-3 gap-4 p-8">
+      {!receivedData.categories.length >0 ? <p>No Data Found</p> :receivedData.categories.map(category => <AssessmentCategoryCard category={category}/>)}
+      </div>
     </div>
   );
 };

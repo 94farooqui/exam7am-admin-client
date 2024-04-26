@@ -24,7 +24,7 @@ const Sidebar = () => {
     <div className="sticky top-0 left-0 h-screen w-64 bg-[#1C2434] text-[#DEE4EE] flex flex-col">
       <div className="p-4">
         <div className="py-2 flex justify-center">
-          <img src={Logo} className="w-32 sm:w-44" />
+          <Link to='/'><img src={Logo} className="w-32 sm:w-44" /></Link>
         </div>
         <h2 className="px-4 py-2 text-slate-400 text-[14px]">MENU</h2>
         <div className=" flex flex-col gap-2 text-[16px] ">

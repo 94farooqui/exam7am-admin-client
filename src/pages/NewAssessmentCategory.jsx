@@ -7,7 +7,7 @@ import {
 } from "firebase/storage";
 import { app } from "../firebase";
 import { createNewAssessment } from "../apiHelper/assessment.helper";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const defaultNewCategory = {
   title: null,
@@ -16,6 +16,9 @@ const defaultNewCategory = {
 };
 
 const NewAssessmentCategory = () => {
+  const params = useParams()
+  const {module} = params;
+
   const [newCategory, setNewCategory] = useState(defaultNewCategory);
   const formRef = useRef()
   const navigate = useNavigate()
@@ -65,10 +68,10 @@ const NewAssessmentCategory = () => {
 
   const onFormSubmit = async (event) => {
     event.preventDefault();
-    const result = await createNewAssessment(newCategory)
+    const result = await createNewAssessment(module,newCategory)
     if(result){
         formRef.current.reset()
-        navigate('/assessment')
+        navigate(-1)
     }
     else setNewError("Something went wrong")
     // console.log(newCategory)
