@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { createNewQuestion } from "../apiHelper/assessment.helper";
+import { getStorage } from "firebase/storage";
 
 const initialValues = {
   question: "",
@@ -11,8 +12,9 @@ const initialValues = {
 
 const AssessmentNewQuestion = () => {
   const formRef = useRef(null)
-  const params = useParams();
-  const { id } = params;
+  const { module,category } = useParams();
+  // const { module,category } = params;
+  console.log(module,category)
   const navigate = useNavigate()
   const [newQuestion, setNewQuestion] = useState(initialValues);
   const [uploadPercentage, setUploadPercentage] = useState(0);
@@ -65,7 +67,7 @@ const AssessmentNewQuestion = () => {
 
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) =>
-          setNewCategory({ ...newCategory, image: downloadURL })
+          setNewQuestion({ ...newQuestion, image: downloadURL })
         );
       }
     );
@@ -83,7 +85,7 @@ const AssessmentNewQuestion = () => {
       obj["value"] = optinosValueArray[i];
       setNewQuestion({...newQuestion, options:newQuestion.options.push(obj) })
     }
-    const questionAdded = createNewQuestion({ id: id, question: newQuestion });  //sending data to helper function
+    const questionAdded = createNewQuestion(module,category,newQuestion);  //sending data to helper function
     if(questionAdded){
       setNewQuestion(initialValues)
       formRef.current.reset()

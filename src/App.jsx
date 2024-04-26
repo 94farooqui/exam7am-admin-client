@@ -32,6 +32,8 @@ const App = () => {
             <Route path="/module/new" element={<NewModule />} />
             <Route path="/:module" element={<ModulePage />} />
             <Route path="/:module/new" element={<NewAssessmentCategory />} />
+            <Route path="/:module/:category" element={<AssessmentDetails />} />
+            <Route path="/:module/:category/newQuestion" element={<AssessmentNewQuestion />} />
             <Route path="/quiz" element={<QuizListPage />} />
             <Route path="/assessment" element={<AssessmentHomePage />}></Route>
             <Route path="/assessment/:id" element={<AssessmentDetails />} />

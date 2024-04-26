@@ -15,10 +15,10 @@ export const getAllAssessment = async () => {
   }
 };
 
-export const getAssessmentDetails = async (id) => {
-  console.log(id);
+export const getAssessmentDetails = async (module,category) => {
+  console.log(module,category)
   console.log("Fetching assessment");
-  const response = await axios.get(`${serverURL}/api/admin/assessments/${id}`);
+  const response = await axios.get(`${serverURL}/modules/${module}/categories/${category}`);
 
   if (response.status === 200) {
     //console.log(response.data);
@@ -36,13 +36,13 @@ export const createNewAssessment = async (moduleName,assessment) => {
   } else return false;
 };
 
-export const createNewQuestion = async ({ id, question }) => {
-  console.log(id, question);
+export const createNewQuestion = async ( module,category,question) => {
+  //console.log(id, question);
   const response = await axios.post(
-    `${serverURL}/api/admin/assessments/${id}`,
+    `${serverURL}/modules/${module}/categories/${category}/newQuestion`,
     question
   );
-  if (response.status === 201) {
+  if (response.status === 200) {
     return true;
   } else return false;
 };

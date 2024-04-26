@@ -8,9 +8,7 @@ import AssessmentQuestionCard from "../components/AssessmentQuestionCard";
 
 const AssessmentDetails = () => {
   const params = useParams();
-  useEffect(()=>{
-    refetch()
-  },[])
+
 
   const {
     data: assessment,
@@ -20,9 +18,14 @@ const AssessmentDetails = () => {
   } = useQuery({
     queryKey: ["assessment", params.id],
     queryFn: () => {
-      return getAssessmentDetails(params.id);
+      return getAssessmentDetails(params.module,params.category);
     },
   });
+
+  useEffect(()=>{
+    refetch()
+    console.log(assessment)
+  },[assessment])
 
   if (isLoading) return <p>Loading</p>;
 
