@@ -30,7 +30,7 @@ export const getAssessmentDetails = async (module,category) => {
 
 export const createNewAssessment = async (moduleName,assessment) => {
   console.log(assessment);
-  const response = await axios.post(`${serverURL}/modules/${moduleName}/categories`, assessment)
+  const response = await axios.post(`${serverURL}/api/admin/modules/${moduleName}/categories`, assessment)
   if (response.status === 200) {
     return true;
   } else return false;
@@ -39,7 +39,7 @@ export const createNewAssessment = async (moduleName,assessment) => {
 export const createNewQuestion = async ( module,category,question) => {
   //console.log(id, question);
   const response = await axios.post(
-    `${serverURL}/modules/${module}/categories/${category}/newQuestion`,
+    `${serverURL}/api/admin/modules/${module}/categories/${category}/newQuestion`,
     question
   );
   if (response.status === 200) {
