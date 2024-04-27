@@ -22,12 +22,12 @@ const Sidebar = () => {
 
   return (
     <div className="sticky top-0 left-0 h-screen w-64 bg-[#1C2434] text-[#DEE4EE] flex flex-col">
-      <div className="p-4">
-        <div className="py-2 flex justify-center">
+      <div className="">
+        <div className="flex items-center justify-center h-16">
           <Link to='/'><img src={Logo} className="w-32 sm:w-44" /></Link>
         </div>
-        <h2 className="px-4 py-2 text-slate-400 text-[14px]">MENU</h2>
-        <div className=" flex flex-col gap-2 text-[16px] ">
+        {/* <h2 className="px-4 py-2 text-slate-400 text-[14px]">MENU</h2> */}
+        <div className=" flex flex-col gap-2 text-[16px] p-4">
         <NavLink className="w-full py-2 px-4 hover:bg-[#333A48] rounded-lg" to="/">
               <div className="flex items-center gap-2">
                 <RxDashboard className="text-[18px]" />
@@ -42,7 +42,7 @@ const Sidebar = () => {
               </div>
             </NavLink>
           ))}
-          <Link to='/module/new'>Add New</Link>
+          <Link to='/module/new' ><button className="w-full p-2  rounded-lg border-2 border-slate-500 font-bold">Add New</button></Link>
         </div>
         {/* Add your sidebar content here */}
       </div>

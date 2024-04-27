@@ -1,3 +1,4 @@
+import {HeaderProvider} from './context/HeaderContext'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AssessmentHomePage from "./pages/AssessmentHomePage";
 import DrivingHomePage from "./pages/DrivingHomePage";
@@ -20,15 +21,18 @@ import AssessmentNewQuestion from "./pages/AssessmentNewQuestion";
 import AssessmentEditQuestion from "./pages/AssessmentEditQuestion";
 import ModulePage from "./pages/ModulePage";
 import NewModule from "./pages/NewModule";
+import Layout from "./components/Layout";
 
 const queryClient = new QueryClient();
 
 const App = () => {
   return (
+    <HeaderProvider>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home />}>
+          <Route element={<Layout />}>
+            <Route exact path="/" element={<Home/>} />
             <Route path="/module/new" element={<NewModule />} />
             <Route path="/:module" element={<ModulePage />} />
             <Route path="/:module/new" element={<NewAssessmentCategory />} />
@@ -50,7 +54,7 @@ const App = () => {
             <Route path="/driving" element={<DrivingHomePage />} />
             <Route path="/driving/:country" element={<DrivingCountry />} />
             <Route path="/school" element={<SchoolProgram />} />
-          </Route>
+        </Route>
         </Routes>
 
         <Routes>
@@ -59,6 +63,7 @@ const App = () => {
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
+    </HeaderProvider>
   );
 };
 

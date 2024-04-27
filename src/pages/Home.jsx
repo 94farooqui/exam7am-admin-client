@@ -4,15 +4,19 @@ import HomeSectionsBar from "../components/HomeSectionsBar";
 import Sidebar from "../components/Sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
+import { dashboard } from "../data/home-dashboard-data";
+import DashboardCard from "../components/Cards/DashboardCard";
 
 const Home = () => {
   return (
-    <div className="">
-      <div className="grid grid-cols-[256px_auto]">
-        <Sidebar />
-        <div className="w-full 1fr">
-          <Header />
-          <Outlet />
+    <div className="w-full">
+      <div className="max-w-[1200px] mx-auto py-4">
+        <h3 className="text-slate-600 font-bold text-2xl">Dashboard</h3>
+
+        <div className="grid grid-cols-4 gap-4 mt-4">
+          {dashboard.map((data) => (
+            <DashboardCard data={data} />
+          ))}
         </div>
       </div>
     </div>
