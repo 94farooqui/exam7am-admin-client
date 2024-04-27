@@ -40,10 +40,10 @@ const ModulePage = () => {
     <div className="w-full">
       <div>
         <div className="w-full h-16 px-4 flex items-center justify-between border-t-2 border-slate-100 shadow-sm">
-          <h1 className="text-xl font-bold text-slate-600">
+          <h1 className="text-xl font-bold text-slate-600 ml-4">
             {receivedData.title}
           </h1>
-          <Link to="new" className="p-2 border rounded-lg text-lg">
+          <Link to="new" className="p-2 border rounded-lg text-lg bg-white text-slate-600">
             Add New
           </Link>
         </div>
