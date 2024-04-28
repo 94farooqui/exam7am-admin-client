@@ -10,7 +10,7 @@ const AssessmentTitleCard = ({ assessment }) => {
         <p className="text-slate-600">{assessment.description}</p>
       </div>
       <div className="p-4">
-        <img src={assessment.image} className="w-80" />
+        <img src={assessment.image} className="w-80 h-60 object-contain" />
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ export const getAllAssessment = async () => {
 export const getAssessmentDetails = async (module,category) => {
   console.log(module,category)
   console.log("Fetching assessment");
-  const response = await axios.get(`${serverURL}/modules/${module}/categories/${category}`);
+  const response = await axios.get(`${serverURL}/api/admin/modules/${module}/categories/${category}`);
 
   if (response.status === 200) {
     //console.log(response.data);
