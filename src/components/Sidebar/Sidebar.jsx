@@ -21,7 +21,7 @@ const Sidebar = () => {
   if(error) return null
 
   return (
-    <div className="sticky top-0 left-0 h-screen w-64 bg-[#1C2434] text-[#DEE4EE] flex flex-col">
+    <div className="hidden lg:flex sticky top-0 left-0 h-screen w-64 bg-[#1C2434] text-[#DEE4EE] flex-col">
       <div className="">
         <div className="flex items-center justify-center h-16">
           <Link to='/'><img src={Logo} className="w-32 sm:w-44" /></Link>

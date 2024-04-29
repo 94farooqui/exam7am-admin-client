@@ -6,6 +6,8 @@ import ErrorPage from "../components/ErrorPage";
 import AssessmentTitleCard from "../components/Cards/AssessmentTitleCard";
 import AssessmentQuestionCard from "../components/AssessmentQuestionCard";
 import { useHeader } from "../context/HeaderContext";
+import { FaCirclePlus } from "react-icons/fa6";
+import { FaRotate } from "react-icons/fa6";
 
 const AssessmentDetails = () => {
   const params = useParams();
@@ -37,18 +39,20 @@ const AssessmentDetails = () => {
 
   return (
     <div className="max-w-[1200px] mx-auto font-poppins">
-      <div className="flex flex-col gap-8 py-8">
+      <div className="flex flex-col gap-8 p-4 lg:py-8">
         <AssessmentTitleCard assessment={assessment} />
         <div className="w-full flex justify-between items-center border-b-2 border-slate-300 pb-2">
           <h2 className="text-xl font-semibold text-sky-700">Questions</h2>
           <div className="flex gap-2">
             <Link
               to="newQuestion"
-              className="bg-slate-600 rounded-md p-2 text-sm text-white"
+              className="hidden lg:block bg-slate-600 rounded-md p-2 text-sm text-white"
             >
               Add Question
             </Link>
-            <button onClick={()=>{refetch()}} className="bg-slate-700 rounded-md p-2 text-sm text-white">Refresh</button>
+            <Link to="newQuestion" className="lg:hidden  bg-slate-700 rounded-md p-2 text-sm text-white"><FaCirclePlus /></Link>
+            <button onClick={()=>{refetch()}} className="hidden lg:block bg-slate-700 rounded-md p-2 text-sm text-white">Refresh</button>
+            <button onClick={()=>{refetch()}} className="lg:hidden bg-slate-700 rounded-md p-2 text-sm text-white"><FaRotate /></button>
           </div>
         </div>
         {assessment.questions.map((question, index) => (

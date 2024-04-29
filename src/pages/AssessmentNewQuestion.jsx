@@ -95,7 +95,7 @@ const AssessmentNewQuestion = () => {
   return (
     <div className="max-w-[1200px] mx-auto py-8">
       <div className="w-full flex flex-col gap-4">
-        <h2 className="text-2xl font-bold text-slate-600">Add Question</h2>
+        <h2 className="text-2xl font-bold text-slate-600 mx-4">Add Question</h2>
         <form
         ref={formRef}
           onSubmit={(e) => handleFormSubmit(e)}
@@ -133,7 +133,7 @@ const AssessmentNewQuestion = () => {
             </div>
           </div>
           <h2 className="text-xl font-semibold text-slate-600 mt-2">Options</h2>
-          <div className="flex gap-2 items-center">
+          <div className="flex flex-col lg:flex-row gap-2 lg:items-center">
             <label>Option 01</label>
             <input
               type="text"
@@ -143,7 +143,7 @@ const AssessmentNewQuestion = () => {
               placeholder="Enter option text"
             />
           </div>
-          <div className="flex gap-2 items-center">
+          <div className="flex flex-col lg:flex-row gap-2 lg:items-center">
             <label>Option 02</label>
             <input
               type="text"
@@ -153,7 +153,7 @@ const AssessmentNewQuestion = () => {
               placeholder="Enter option text"
             />
           </div>
-          <div className="flex gap-2 items-center">
+          <div className="flex flex-col lg:flex-row gap-2 lg:items-center">
             <label>Option 03</label>
             <input
               type="text"
@@ -163,7 +163,7 @@ const AssessmentNewQuestion = () => {
               placeholder="Enter option text"
             />
           </div>
-          <div className="flex gap-2 items-center">
+          <div className="flex flex-col lg:flex-row gap-2 lg:items-center">
             <label>Option 04</label>
             <input
               type="text"
@@ -173,7 +173,7 @@ const AssessmentNewQuestion = () => {
               placeholder="Enter option text"
             />
           </div>
-          <div className="flex gap-2 items-center">
+          <div className="flex flex-col lg:flex-row gap-2 lg:items-center">
             <label>Correct Option</label>
             <select
               name="correctAnswer"
@@ -187,7 +187,7 @@ const AssessmentNewQuestion = () => {
               <option value="four">Option 04</option>
             </select>
           </div>
-          <div className="flex justify-end gap-2">
+          <div className="flex justify-center lg:justify-end gap-2">
             <button
               type="reset"
               className=" w-16 bg-red-900 rounded-md p-2 text-sm text-white"
