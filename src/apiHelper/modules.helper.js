@@ -1,8 +1,8 @@
 import axios from "axios";
-const serverURL = import.meta.env.VITE_SERVER_URL
+const serverURL = `${import.meta.env.VITE_SERVER_URL}/api/admin`
 
 export const getAllModules = async () => { 
-    const response = await axios.get(`${serverURL}/api/admin/modules`)
+    const response = await axios.get(`${serverURL}/modules`)
 
     if(response.status == 200){
         return response.data
@@ -11,7 +11,7 @@ export const getAllModules = async () => {
 }
 
 export const getAllCategoriesOfModule = async (moduleName) => {
-    const response = await axios.get(`${serverURL}/api/admin/modules/${moduleName}/categories`)
+    const response = await axios.get(`${serverURL}/modules/${moduleName}/categories`)
     if(!response.status == 200){
         return null
     }
@@ -21,7 +21,7 @@ export const getAllCategoriesOfModule = async (moduleName) => {
 
 export const createNewModule = async (module) => {
     console.log(module)
-    const response = await axios.post(`${serverURL}/api/admin/modules`,module)
+    const response = await axios.post(`${serverURL}/modules`,module)
 
     if(response.status == 200){
         return true

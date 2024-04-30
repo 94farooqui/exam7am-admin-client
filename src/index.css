@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 .active{
-    @apply lg:bg-blue-800 rounded-lg lg:hover:bg-blue-800 font-bold text-blue-800
+    @apply lg:bg-blue-800 lg:text-white rounded-lg lg:hover:bg-blue-800 font-bold
 }
 
 body{

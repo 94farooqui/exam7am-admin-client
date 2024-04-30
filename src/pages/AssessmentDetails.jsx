@@ -19,7 +19,7 @@ const AssessmentDetails = () => {
     refetch,
     error,
   } = useQuery({
-    queryKey: ["assessment", params.id],
+    queryKey: ["assessment", params.category],
     queryFn: () => {
       return getAssessmentDetails(params.module, params.category);
     },
