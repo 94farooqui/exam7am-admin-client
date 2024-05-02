@@ -22,6 +22,8 @@ import AssessmentEditQuestion from "./pages/AssessmentEditQuestion";
 import ModulePage from "./pages/ModulePage";
 import NewModule from "./pages/NewModule";
 import Layout from "./components/Layout";
+import ModulesList from './pages/ModulesList';
+import UsersList from './pages/UsersList';
 
 const queryClient = new QueryClient();
 
@@ -33,6 +35,9 @@ const App = () => {
         <Routes>
           <Route element={<Layout />}>
             <Route exact path="/" element={<Home/>} />
+            <Route exact path="/modules" element={<ModulesList/>} />
+            <Route exact path="/users" element={<UsersList/>} />
+
             <Route path="/module/new" element={<NewModule />} />
             <Route path="/:module" element={<ModulePage />} />
             <Route path="/:module/new" element={<NewAssessmentCategory />} />

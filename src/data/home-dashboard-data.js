@@ -8,22 +8,26 @@ export const dashboard = [
     {
         title:"Modules",
         value:10,
-        image: Assessment
+        image: Assessment,
+        url:"/modules"
     },
     {
         title:"Questions",
         value:128,
-        image: Quiz
+        image: Quiz,
+        url:"/modules"
     },
     {
         title:"Users",
         value:38,
-        image: Book
+        image: Book,
+        url:"/users"
     },
     {
         title:"Driving",
         value:128,
-        image: Car
+        image: Car,
+        url:"/modules"
     },
 ]
 
